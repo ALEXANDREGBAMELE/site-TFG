@@ -329,26 +329,264 @@ nav a:hover::after {
 }
 
 /* =========================
-   FOOTER
+   CHURCH DETAILS
 ========================= */
-.footer {
-    background: #0b0b0b;
-    color: #bbb;
-    text-align: center;
-    padding: 35px 20px;
-    font-size: 14px;
 
-
-    input {
-            padding: 14px 20px;
-            border-radius: 45px;
-            border: 1.8px solid #ddd;
-            font-size: 14px;
-            outline: none;
-            transition: all 0.35s ease;
-            background: #fff;
-        }
+.church-meta {
+    margin-top: 25px;
+    list-style: none;
+    padding: 0;
 }
+
+.church-meta li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #444;
+}
+
+/* =========================
+   EVENTS / PROGRAMMES
+========================= */
+
+.events {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.event {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 20px;
+    border-left: 6px solid var(--red);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease;
+}
+
+.event:hover {
+    transform: translateY(-6px);
+}
+
+.event-date {
+    font-weight: 600;
+    color: var(--red);
+    margin-bottom: 8px;
+}
+
+.event-date.gold {
+    color: var(--gold);
+}
+
+.event h4 {
+    font-size: 18px;
+}
+
+/* =========================
+   PASTEUR
+========================= */
+
+.section.bg-light h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--red);
+}
+
+
+/* =========================
+   RDV FORM
+========================= */
+
+.rdv-form {
+    max-width: 650px;
+    margin: 60px auto 0;
+    background: #fff;
+    padding: 45px 40px;
+    border-radius: 30px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 15px 18px;
+    border-radius: 14px;
+    border: 1.6px solid #ddd;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(177, 18, 38, 0.15);
+}
+
+.rdv-form button {
+    margin-top: 15px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* =========================
+   CONTACT MODERN
+========================= */
+
+.contact-section {
+    background: linear-gradient(135deg, #f8f8f8, #ffffff);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.contact-info h2 {
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+}
+
+.contact-item span {
+    font-size: 22px;
+}
+
+/* Formulaire */
+.contact-form {
+    background: #fff;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.contact-form h3 {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1.5px solid #ddd;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+/* =========================
+   FOOTER MODERN
+========================= */
+
+.footer-modern {
+    background: #111;
+    color: #fff;
+    padding-top: 60px;
+}
+
+.footer-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-modern h3,
+.footer-modern h4 {
+    margin-bottom: 15px;
+}
+
+.footer-modern p {
+    opacity: 0.75;
+}
+
+.footer-links a {
+    display: block;
+    color: #fff;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.footer-newsletter input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    margin-bottom: 12px;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    opacity: 0.6;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid-modern {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-links a {
+        transform: none;
+    }
+}
+
+
 
 /* =========================
    ANIMATION
@@ -383,5 +621,221 @@ nav a:hover::after {
 
     .hero-buttons {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .rdv-form {
+        padding: 35px 25px;
+    }
+
+    .hero {
+        height: 80vh;
+    }
+}
+
+
+/* =========================
+   RDV MODAL (FIX SCROLL)
+========================= */
+
+/* Empêche le scroll du body quand le modal est ouvert */
+body.modal-open {
+    overflow: hidden;
+}
+
+.rdv-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 200;
+}
+
+.rdv-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rdv-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+/* CONTENEUR PRINCIPAL */
+.rdv-container {
+    position: relative;
+    background: #fff;
+    width: 95%;
+    max-width: 1100px;
+    max-height: 90vh;
+    overflow-y: auto; /* ✅ scroll interne */
+    padding: 40px;
+    border-radius: 28px;
+    z-index: 2;
+    animation: fadeInUp 0.6s ease;
+}
+
+/* Scrollbar élégante */
+.rdv-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.rdv-container::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+/* Bouton fermer */
+.rdv-close {
+    position: sticky;
+    top: 0;
+    margin-left: auto;
+    display: block;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.rdv-subtitle {
+    margin-bottom: 30px;
+    opacity: 0.7;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.rdv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* =========================
+   CALENDAR
+========================= */
+
+.calendar-box {
+    background: var(--gray);
+    padding: 30px;
+    border-radius: 22px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-header button {
+    border: none;
+    background: var(--gold);
+    color: #000;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.calendar-days,
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.calendar-days span {
+    text-align: center;
+    font-weight: 500;
+    opacity: 0.6;
+}
+
+.calendar-dates span {
+    text-align: center;
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.calendar-dates .available {
+    background: #fff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.calendar-dates .available:hover {
+    background: var(--gold);
+    transform: translateY(-2px);
+}
+
+.calendar-dates .selected {
+    background: var(--gold);
+    font-weight: bold;
+}
+
+.calendar-dates .disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* =========================
+   FORM MODERN
+========================= */
+
+.rdv-form-modern .form-group {
+    margin-bottom: 18px;
+}
+
+.rdv-form-modern input,
+.rdv-form-modern select,
+.rdv-form-modern textarea {
+    width: 100%;
+    padding: 15px 16px;
+    border-radius: 14px;
+    border: 1.5px solid #ddd;
+    font-size: 15px;
+}
+
+.rdv-form-modern textarea {
+    resize: none;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.map-box {
+    margin-top: 35px;
+    border-radius: 22px;
+    overflow: hidden;
+}
+
+.map-box iframe {
+    width: 100%;
+    height: 260px;
+    border: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    .rdv-container {
+        padding: 30px 20px;
+    }
+
+    .rdv-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-box iframe {
+        height: 220px;
     }
 }
