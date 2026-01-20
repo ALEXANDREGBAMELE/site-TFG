@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TFG - Église Évangélique</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+      <div class="container nav">
+        <div class="logo"><a href="index.html">TFG</a></div>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="churches.html">Nos Églises</a></li>
+            <li><a href="#media">Médias</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline-dark">Connexion</a>
+          <a href="#donation" class="btn btn-gold">Don</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>
+          Une famille, une foi,<br />
+          une destinée en Christ
+        </h1>
+        <p>Église évangélique TFG</p>
+
+        <div class="hero-buttons">
+          <a href="#media" class="btn btn-gold">Voir nos cultes</a>
+          <a href="#contact" class="btn btn-outline">Nous contacter</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section">
+      <div class="container grid-2">
+        <div>
+          <img
+            src="./assets/images/church.jpg"
+            alt="Église TFG"
+            class="img-rounded"
+          />
+        </div>
+
+        <div>
+          <h2>Qui sommes-nous ?</h2>
+          <p>
+            TFG est un ministère évangélique engagé dans la transformation des
+            vies par la Parole de Dieu, la louange et l’amour.
+          </p>
+          <p>
+            Nous croyons en une foi vivante, pratique et impactante, capable de
+            toucher les familles et les nations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= NETWORK ================= -->
+    <section class="section network bg-light">
+      <div class="container center">
+        <h2>TFG : une vision, plusieurs églises</h2>
+        <p class="network-text">
+          Présente dans plusieurs localités, l’église TFG est une grande famille
+          spirituelle unie par la même vision et la même foi.
+        </p>
+
+        <a href="churches.html" class="btn btn-gold"> Découvrir nos églises </a>
+      </div>
+    </section>
+
+    <!-- ================= TEACHINGS ================= -->
+    <section id="teachings" class="section">
+      <div class="container">
+        <h2 class="center">Enseignements & Louange</h2>
+
+        <div class="cards">
+          <div class="card">
+            <img src="./assets/images/worship.jpg" alt="Louange" />
+            <h3>La foi vivante</h3>
+            <p>Message du dimanche</p>
+          </div>
+
+          <div class="card">
+            <img src="./assets/images/apotre.jpeg" alt="Pasteur TFG" />
+            <h3>Marcher dans la grâce</h3>
+            <p>Par le pasteur principal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VIDEO ================= -->
+    <section id="media" class="section video-section bg-light">
+      <div class="container center">
+        <h2>Un moment de culte</h2>
+        <p>Plongez dans l’atmosphère spirituelle de TFG</p>
+
+        <video controls poster="./assets/images/hero.jpg">
+          <source src="./assets/videos/culte.mp4" type="video/mp4" />
+          Votre navigateur ne supporte pas la vidéo.
+        </video>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section class="section">
+      <div class="container">
+        <h2 class="center">Galerie</h2>
+
+        <div class="gallery">
+          <img src="./assets/images/gallery1.jpg" alt="Culte TFG" />
+          <img src="./assets/images/gallery2.jpg" alt="Louange TFG" />
+          <img src="./assets/images/gallery3.jpg" alt="Prière TFG" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DONATION ================= -->
+    <section id="donation" class="section donation center">
+      <h2>Soutenir l’œuvre de Dieu</h2>
+      <p>
+        Chaque don contribue à l’avancement du Royaume et au soutien des actions
+        de l’église.
+      </p>
+      <a href="#" class="btn btn-gold">Faire un don</a>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section bg-light">
+      <div class="container center">
+        <h2>Contact</h2>
+        <p>Email : contact@tfg-church.org</p>
+        <p>Téléphone : +225 00 00 00 00</p>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Église TFG</h3>
+          <p>Une famille · Une vision · Une destinée</p>
+        </div>
+
+        <div>
+          <h4>Newsletter</h4>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre adresse email" required />
+            <button class="btn btn-gold btn-small">S’inscrire</button>
+          </form>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2026 Église TFG – Tous droits réservés</p>
+    </footer>
+  </body>
+</html>

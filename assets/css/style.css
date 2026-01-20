@@ -1,0 +1,387 @@
+/* =========================
+   VARIABLES & RESET
+========================= */
+:root {
+    --red: #B11226;
+    --red-dark: #8c0e1d;
+    --gold: #F4C430;
+    --gold-soft: #f9e39a;
+    --dark: #1F1F1F;
+    --light: #FAFAFA;
+    --gray: #F2F2F2;
+    --glass: rgba(255, 255, 255, 0.85);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.8;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    opacity: 0.9;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.bg-light {
+    background: linear-gradient(to bottom, #f7f7f7, #ffffff);
+}
+
+.img-rounded {
+    border-radius: 25px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    position: sticky;
+    top: 0;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 2px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+
+ a{
+     text-decoration: none;
+     color: var(--red);
+    
+ }
+  nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--red));
+    transition: width 0.4s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+    padding: 13px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    display: inline-block;
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+    color: #000;
+    box-shadow: 0 10px 30px rgba(244, 196, 48, 0.5);
+}
+
+.btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 45px rgba(244, 196, 48, 0.7);
+}
+
+.btn-outline {
+    border: 2px solid var(--gold);
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+.btn-outline-dark {
+    border: 2px solid var(--red);
+    color: var(--red);
+}
+
+.btn-outline-dark:hover {
+    background: var(--red);
+    color: #fff;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    height: 95vh;
+    background: url("../images/hero.jpg") center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(177, 18, 38, 0.85),
+            rgba(0, 0, 0, 0.65));
+}
+
+.hero-content {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    max-width: 800px;
+    animation: fadeInUp 1.4s ease;
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   ABOUT
+========================= */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 60px;
+    align-items: center;
+}
+
+/* =========================
+   CARDS
+========================= */
+.cards {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    height: 300px;
+    /* augmenté de 220px à 300px */
+    object-fit: cover;
+    width: 100%;
+}
+
+.card h3 {
+    margin: 15px;
+    font-size: 20px;
+    color: var(--dark);
+}
+
+.card p {
+    margin: 0 15px 15px 15px;
+    color: #555;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 35px 65px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================
+   VIDEO
+========================= */
+.video-section video {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 45px;
+    border-radius: 30px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   GALLERY
+========================= */
+.gallery {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.gallery img {
+    height: 280px;
+    border-radius: 22px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.07);
+    filter: brightness(1.1);
+}
+
+/* =========================
+   DONATION
+========================= */
+.donation {
+    background: linear-gradient(135deg, var(--red), var(--red-dark));
+    color: #fff;
+}
+
+.donation h2 {
+    color: #fff;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background: #0b0b0b;
+    color: #bbb;
+    text-align: center;
+    padding: 35px 20px;
+    font-size: 14px;
+
+
+    input {
+            padding: 14px 20px;
+            border-radius: 45px;
+            border: 1.8px solid #ddd;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.35s ease;
+            background: #fff;
+        }
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+}
