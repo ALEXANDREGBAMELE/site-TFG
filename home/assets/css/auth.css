@@ -1,0 +1,233 @@
+/* =========================
+   VARIABLES
+========================= */
+:root {
+    --red: #B11226;
+    --red-dark: #8c0e1d;
+    --dark: #1F1F1F;
+    --light: #FFFFFF;
+    --gray: #CCCCCC;
+    --shadow-dark: rgba(0,0,0,0.5);
+    --shadow-btn: rgba(177,18,38,0.4);
+}
+
+/* =========================
+   GLOBAL
+========================= */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(to bottom, var(--red), #220000); /* dégradé vertical rouge → noir */
+    color: var(--dark);
+}
+
+/* =========================
+   WRAPPER
+========================= */
+.auth-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.auth-card {
+    background: var(--light); /* blanc */
+    backdrop-filter: blur(12px);
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 32px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px var(--shadow-dark);
+    display: flex;
+    flex-direction: column;
+   
+    animation: slideUp 0.6s ease;
+    color: var(--dark); /* texte foncé pour contraste */
+}
+
+/* =========================
+   HEADER
+========================= */
+.auth-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.auth-logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--red); /* logo rouge sur fond blanc */
+    letter-spacing: 2px;
+}
+
+/* =========================
+   FORM
+========================= */
+.form-group {
+    width: 100%;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    width: 100%;
+    color: var(--dark); /* labels foncés */
+}
+
+/* Input + icon */
+.input-icon {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon i {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: var(--red); /* icône rouge */
+    opacity: 0.8;
+}
+
+.input-icon input {
+    width: 100%;
+    padding: 14px 16px 14px 42px;
+    border-radius: 30px;
+    border: 1.5px solid rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.95);
+    color: var(--dark); /* texte input foncé */
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-icon input::placeholder {
+    color: rgba(0,0,0,0.5); /* placeholder gris foncé */
+}
+
+.input-icon input:focus {
+    outline: none;
+    border-color: var(--red);
+    background: rgba(255,255,255,1);
+    box-shadow: 0 0 8px rgba(177,18,38,0.3);
+}
+
+/* =========================
+   OPTIONS
+========================= */
+.form-options {
+    text-align: center;
+    margin: 16px 0;
+}
+
+.form-options a {
+    font-size: 13px;
+    color: var(--red); /* lien rouge */
+    text-decoration: underline;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-auth {
+    width: 100%;
+    padding: 14px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, var(--red), var(--red-dark));
+    color: var(--light); /* texte blanc */
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px var(--shadow-btn);
+    transition: all 0.3s ease;
+}
+
+.btn-auth:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px var(--shadow-btn);
+}
+
+/* =========================
+   SEPARATOR
+========================= */
+.separator {
+    text-align: center;
+    margin: 22px 0;
+    font-size: 12px;
+    opacity: 0.6;
+    color: var(--dark);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.auth-footer {
+    font-size: 11px;
+    text-align: center;
+    opacity: 0.7;
+    color: var(--dark);
+}
+
+.auth-footer a {
+    color: var(--red);
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+    .auth-wrapper {
+        padding-top: 50px;
+    }
+
+    .auth-card {
+        padding: 28px 20px;
+        max-width: 340px;
+    }
+
+    .auth-logo {
+        font-size: 24px;
+    }
+
+    .btn-auth {
+        padding: 12px;
+        font-size: 14px;
+    }
+}

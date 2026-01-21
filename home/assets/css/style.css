@@ -142,6 +142,83 @@ nav a:hover::after {
     width: 100%;
 }
 
+/* Hamburger */
+.hamburger {
+  display: none; /* caché sur desktop */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 3000; /* très au-dessus */
+  position: relative;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--dark);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger croix quand actif */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Nav responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--light);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 2500;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-actions {
+    display: none; /* cacher boutons desktop */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-btns-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* cacher nav-btns-mobile sur desktop */
+.nav-btns-mobile {
+  display: none;
+}
+
+
+
+
+
+
 /* =========================
    BUTTONS
 ========================= */
