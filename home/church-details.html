@@ -3,119 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TFG Abidjan – Détails</title>
+  <title>Détails Église – TFG</title>
 
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="container nav">
-    <div class="logo"><a href="index.html">TFG</a></div>
+<!-- ================= HEADER ================= -->
+<div id="header"></div>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="churches.html">Nos Églises</a></li>
-        <li><a href="index.html#media">Médias</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="nav-actions">
-      <a href="login.html" class="btn btn-outline-dark">Connexion</a>
-    </div>
-  </div>
-</header>
-
-<!-- HERO ÉGLISE -->
-<section class="hero" style="background-image:url('assets/images/tfg-abidjan-yopougon.jpeg')">
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>TFG Abidjan – Yopougon</h1>
-    <p>Une communauté vivante au cœur d’Abidjan</p>
+    <h1 id="churchName"></h1>
+    <p id="churchSlogan"></p>
   </div>
 </section>
 
-<!-- IDENTITÉ ÉGLISE -->
+<!-- ================= IDENTITÉ ÉGLISE ================= -->
 <section class="section">
   <div class="container grid-2">
 
     <div>
       <h2>À propos de cette église</h2>
-      <p>
-        L’église TFG Yopougon est un lieu de prière, d’enseignement et
-        d’accompagnement spirituel. Elle accueille chaque semaine des fidèles
-        désireux de grandir dans la foi et l’amour du Christ.
-      </p>
+      <p id="churchDescription"></p>
 
       <ul class="church-meta">
-        <li><strong>📍 Localité :</strong> Yopougon, Abidjan</li>
-        <li><strong>📅 Création :</strong> 2018</li>
-        <li><strong>👥 Membres :</strong> +350 fidèles</li>
+        <li><strong>📍 Localité :</strong> <span id="churchLocation"></span></li>
+        <li><strong>📅 Création :</strong> <span id="churchCreation"></span></li>
+        <li><strong>👥 Membres :</strong> <span id="churchMembers"></span></li>
       </ul>
     </div>
 
     <div>
-      <img src="assets/images/church.jpg" class="img-rounded" alt="Église TFG Abidjan">
+      <img id="churchImage" class="img-rounded" alt="Église TFG">
     </div>
 
   </div>
 </section>
 
-<!-- PASTEUR -->
+<!-- ================= PASTEUR ================= -->
 <section class="section bg-light">
   <div class="container grid-2">
 
     <div>
-      <img src="assets/images/pastor.jpg" class="img-rounded" alt="Pasteur">
+      <img id="pastorImage" class="img-rounded" alt="Pasteur principal">
     </div>
 
     <div>
       <h2>Pasteur principal</h2>
-      <h3>Pasteur Jean Kouadio</h3>
-      <p>
-        Serviteur de Dieu depuis plus de 15 ans, le Pasteur Jean Kouadio est
-        reconnu pour son enseignement profond, son écoute et son accompagnement
-        pastoral.
-      </p>
+      <h3 id="pastorName"></h3>
+      <p id="pastorBio"></p>
     </div>
 
   </div>
 </section>
 
-<!-- PROGRAMMES -->
+<!-- ================= PROGRAMMES ================= -->
 <section class="section">
   <div class="container">
     <h2 class="center">Programmes & Cultes</h2>
 
-    <div class="events">
-      <div class="event">
-        <p class="event-date">Dimanche – 08h30</p>
-        <h4>Culte de célébration</h4>
-      </div>
-
-      <div class="event">
-        <p class="event-date gold">Mercredi – 18h00</p>
-        <h4>Prière & Intercession</h4>
-      </div>
-
-      <div class="event">
-        <p class="event-date">Vendredi – 19h00</p>
-        <h4>Étude biblique</h4>
-      </div>
+    <div class="events" id="programmes">
+      <!-- Injecté dynamiquement -->
     </div>
   </div>
 </section>
 
-<!-- PRISE DE RDV -->
-<!-- RDV BUTTON -->
-<div class="center" style="margin-top: 60px;">
+<!-- ================= RDV ================= -->
+<div class="center" style="margin-top:60px;">
   <button class="btn btn-gold" id="openRdv">Prendre rendez-vous</button>
 </div>
 
-<!-- RDV MODAL -->
+<!-- ================= MODAL RDV ================= -->
 <div class="rdv-modal" id="rdvModal">
   <div class="rdv-overlay"></div>
 
@@ -126,8 +87,8 @@
     <p class="rdv-subtitle">Choisissez une date et une heure disponibles</p>
 
     <div class="rdv-grid">
-      
-      <!-- CALENDAR -->
+
+      <!-- CALENDRIER -->
       <div class="calendar-box">
         <div class="calendar-header">
           <button>&lt;</button>
@@ -150,7 +111,7 @@
         </div>
       </div>
 
-      <!-- FORM -->
+      <!-- FORMULAIRE -->
       <form class="rdv-form-modern">
         <div class="form-group">
           <label>Nom complet</label>
@@ -179,59 +140,26 @@
 
         <button class="btn btn-gold">Confirmer le RDV</button>
       </form>
-
     </div>
 
     <!-- MAP -->
     <div class="map-box">
-      <iframe
-        src="https://www.google.com/maps?q=Yopougon,Abidjan&output=embed"
-        loading="lazy">
-      </iframe>
+      <iframe id="churchMap" loading="lazy"></iframe>
     </div>
   </div>
 </div>
 
-
   <!-- ================= FOOTER ================= -->
-<footer class="footer-modern">
-  <div class="container footer-grid-modern">
+<div id="foot"></div>
 
-    <!-- Brand -->
-    <div class="footer-brand">
-      <h3>Église TFG</h3>
-      <p>
-        Une famille · Une vision · Une destinée en Christ
-      </p>
-    </div>
-
-    <!-- Liens -->
-    <div class="footer-links">
-      <h4>Navigation</h4>
-      <a href="index.html">Accueil</a>
-      <a href="churches.html">Nos Églises</a>
-      <a href="#media">Médias</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-    <!-- Newsletter -->
-    <div class="footer-newsletter">
-      <h4>Newsletter</h4>
-      <p>Recevez nos enseignements et actualités</p>
-
-      <form>
-        <input type="email" placeholder="Votre email" required />
-        <button class="btn btn-gold btn-small">S’inscrire</button>
-      </form>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 Église TFG — Tous droits réservés</p>
-  </div>
-</footer>
-<!-- Lien js -->
+<!-- ================= SCRIPTS ================= -->
 <script src="assets/js/main.js"></script>
+<script>
+  includeHTML("header", "partial/header.html");
+  includeHTML("footer", "partial/footer.html");
+</script>
+<script src="assets/js/churches-data.js"></script>
+<script src="assets/js/church-details.js"></script>
+
 </body>
 </html>

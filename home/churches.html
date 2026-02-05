@@ -8,34 +8,14 @@
   </head>
   <body>
     <!-- HEADER -->
-    <header class="header">
-      <div class="container nav">
-        <div class="logo"><a href="index.html">TFG</a></div>
-
-        <nav>
-          <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="churches.html">Nos Églises</a></li>
-            <li><a href="#media">Médias</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-
-        <div class="nav-actions">
-          <a href="login.html" class="btn btn-outline-dark">Connexion</a>
-          <a href="#donation" class="btn btn-gold">Don</a>
-        </div>
-      </div>
-    </header>
+    <div id="header"></div>
 
     <!-- HERO -->
     <section class="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1>Nos Églises TFG</h1>
-        <p>
-          Découvrez toutes nos églises et rejoignez un culte près de chez vous
-        </p>
+        <p>Découvrez toutes nos églises et rejoignez un culte près de chez vous</p>
       </div>
     </section>
 
@@ -43,88 +23,46 @@
     <section id="churches" class="section">
       <div class="container">
         <h2 class="center">Nos Églises</h2>
-
-        <div class="cards">
-          <!-- Église 1 -->
-          <div class="card">
-            <img
-              src="assets/images/tfg-abidjan-yopougon.jpeg"
-              alt="Église TFG Abidjan"
-            />
-            <h3>TFG Abidjan</h3>
-            <p>Direction : Pasteur Jean Kouadio</p>
-            <a href="church-details.html?church=abidjan" class="btn btn-gold"
-              >En savoir plus</a
-            >
-          </div>
-
-          <!-- Église 2 -->
-          <div class="card">
-            <img
-              src="assets/images/tfg-abidjan-yopougon.jpeg"
-              alt="Église TFG Yamoussoukro"
-            />
-            <h3>TFG Yamoussoukro</h3>
-            <p>Direction : Pasteur Marie Koffi</p>
-            <a
-              href="church-details.html?church=yamoussoukro"
-              class="btn btn-gold"
-              >En savoir plus</a
-            >
-          </div>
-
-          <!-- Église 3 -->
-          <div class="card">
-            <img
-              src="assets/images/tfg-abidjan-yopougon.jpeg"
-              alt="Église TFG Bouaké"
-            />
-            <h3>TFG Bouaké</h3>
-            <p>Direction : Pasteur Alain Koné</p>
-            <a href="church-details.html?church=bouake" class="btn btn-gold"
-              >En savoir plus</a
-            >
-          </div>
+        <div id="church-cards" class="cards">
+          <!-- Les cartes seront générées ici -->
         </div>
       </div>
     </section>
 
-      <!-- ================= FOOTER ================= -->
-<footer class="footer-modern">
-  <div class="container footer-grid-modern">
+    <!-- FOOTER -->
+    <div id="foot"></div>
 
-    <!-- Brand -->
-    <div class="footer-brand">
-      <h3>Église TFG</h3>
-      <p>
-        Une famille · Une vision · Une destinée en Christ
-      </p>
-    </div>
+    <!-- JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+      includeHTML("header", "partial/header.html");
+      includeHTML("footer", "partial/footer.html");
 
-    <!-- Liens -->
-    <div class="footer-links">
-      <h4>Navigation</h4>
-      <a href="index.html">Accueil</a>
-      <a href="churches.html">Nos Églises</a>
-      <a href="#media">Médias</a>
-      <a href="#contact">Contact</a>
-    </div>
+      // Objet CHURCHES (à copier-coller depuis ton fichier JS si ce n'est pas déjà importé)
+      const CHURCHES = {
+        cocody: { name: "Temple de toutes les possibilités – Cocody Angré Cité Caféier 5", heroImage: "assets/images/tfg-cocody.jpeg", pastor: { name: "Inconnu" } },
+        angre: { name: "Temple Angré Djorogobité", heroImage: "assets/images/tfg-angre.jpeg", pastor: { name: "Inconnu" } },
+        yopougon: { name: "Temple Bethesda de Yopougon", heroImage: "assets/images/tfg-bethesda.jpeg", pastor: { name: "Inconnu" } },
+        
+        ndouci: { name: "Temple la main de Dieu – N'douci", heroImage: "assets/images/tfg-ndouci.jpeg", pastor: { name: "Inconnu" } },
+      };
 
-    <!-- Newsletter -->
-    <div class="footer-newsletter">
-      <h4>Newsletter</h4>
-      <p>Recevez nos enseignements et actualités</p>
+      const container = document.getElementById("church-cards");
 
-      <form>
-        <input type="email" placeholder="Votre email" required />
-        <button class="btn btn-gold btn-small">S’inscrire</button>
-      </form>
-    </div>
+      for (const key in CHURCHES) {
+        const church = CHURCHES[key];
+        const card = document.createElement("div");
+        card.className = "card";
 
-  </div>
+        card.innerHTML = `
+          <img src="${church.heroImage}" alt="Église ${church.name}" />
+          <h3>${church.name}</h3>
+          <p>Direction : Pasteur ${church.pastor.name}</p>
+          <a href="church-details.html?church=${key}" class="btn btn-gold">En savoir plus</a>
+        `;
 
-  <div class="footer-bottom">
-    <p>© 2026 Église TFG — Tous droits réservés</p>
-  </div>
-</footer>
+        container.appendChild(card);
+      }
+    </script>
+  </body>
 </html>
